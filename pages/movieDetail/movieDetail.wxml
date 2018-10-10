@@ -1,0 +1,10 @@
+<view class="movieDetailContainer">
+  <image class="movie_img" src="{{movieDetail.images.large}}" />
+  <text class="movie_name">{{movieDetail.original_title}}</text>
+  <view class="movie_detail">
+    <text>评分：{{movieDetail.rating.average}}</text>
+    <text>导演：{{movieDetail.directors[0].name}}</text>
+    <text>主演：<text wx:for="{{movieDetail.casts}}">{{item.name + '  '}}</text></text>
+  </view>
+  <button catch:tap="handleWarn">我要观影</button>
+</view>

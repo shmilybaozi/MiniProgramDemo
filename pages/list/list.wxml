@@ -1,0 +1,28 @@
+<!--pages/list/list.wxml-->
+<!-- 引入模板结构 -->
+<import src="/pages/template/list-template.wxml"></import>
+
+<view>
+  <swiper catch:tap="carouselToDetail" indicator-dots indicator-color="yellowgreen" indicator-active-color="pink" autoplay>
+    <swiper-item>
+      <image data-index="0" src="/images/bg.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image data-index="1" src="/images/bg.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image data-index="2" src="/images/bg.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image data-index="3" src="/images/bg.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image data-index="4" src="/images/bg.jpg"></image>
+    </swiper-item>
+  </swiper>
+  <view wx:for="{{listArr}}" wx:key="{{item.postId}}">
+    <view catch:tap="toDetail" data-index="{{index}}">
+      <template is="listTmp" data="{{...item}}"></template>
+    </view>    
+  </view>
+</view>
